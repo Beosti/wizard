@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://cm2h62nk22roj"]
+[gd_scene load_steps=4 format=3 uid="uid://cm2h62nk22roj"]
+
+[ext_resource type="PackedScene" uid="uid://ku5cpblk3cjd" path="res://scenes/mana_generator.tscn" id="1_5ctoi"]
+[ext_resource type="Script" path="res://scenes/userinterface/user_interface.gd" id="1_al6o8"]
+[ext_resource type="PackedScene" uid="uid://cxrdvccsnycfy" path="res://scenes/clicker.tscn" id="3_5ueiw"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -7,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_al6o8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -32,6 +37,29 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer"]
+layout_mode = 2
+
+[node name="GeneratorLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Generator"
+
+[node name="ClickerLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Clicker"
+
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
@@ -44,6 +72,25 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeftPanel/VBoxContainer/Resources"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPanel/VBoxContainer/Resources/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/LeftPanel/VBoxContainer/Resources/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mana: <value>"
+
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 16
@@ -55,3 +102,15 @@ layout_mode = 2
 [node name="MainView" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="ManaGenerator" parent="HBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("1_5ctoi")]
+layout_mode = 1
+user_interface = NodePath("../../..")
+
+[node name="Clicker" parent="HBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("3_5ueiw")]
+layout_mode = 1
+view = 1
+user_interface = NodePath("../../..")
+
+[connection signal="pressed" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/GeneratorLink" to="." method="_on_generator_link_pressed"]
+[connection signal="pressed" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/ClickerLink" to="." method="_on_clicker_link_pressed"]
