@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Wizard"
-run/main_scene="res://scenes/clicker.tscn"
+run/main_scene="res://scenes/game/main.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 

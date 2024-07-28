@@ -4,7 +4,7 @@ extends Node
 
 static var ref : Main
 
-func _enter_tree() -> void:
+func _singleton_check() -> void:
 	if not ref:
 		ref = self;
 		return;
@@ -12,3 +12,7 @@ func _enter_tree() -> void:
 	queue_free();
 	
 var data : Data
+
+func _enter_tree() -> void:
+	_singleton_check();
+	data = Data.new();

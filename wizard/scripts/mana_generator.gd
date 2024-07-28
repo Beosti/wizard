@@ -5,7 +5,6 @@ extends Control
 @export var label : Label;
 @export var button : Button;
 @export var timer : Timer;
-@export var mana : int = 0;
 @export var view : UserInterface.Views;
 @export var user_interface : UserInterface
 
@@ -14,12 +13,15 @@ func _ready() -> void:
 	visible = true;
 	user_interface.navigation_requested.connect(_on_navigation_request)
 
+func _process(delta: float) -> void:
+	update_label_text();
+
 func create_mana() -> void:
-	mana += 1;
+	Main.ref.data.mana += 1;
 	update_label_text();
 	
 func update_label_text() -> void:
-	label.text = "Mana: %s" %mana;
+	label.text = "Mana: %s" %Main.ref.data.mana;
 
 func begin_generating_mana() -> void:
 	timer.start();
