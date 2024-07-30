@@ -2,26 +2,18 @@ class_name ManaGenerator
 extends Control
 
 
-@export var label : Label;
 @export var button : Button;
 @export var timer : Timer;
 @export var view : UserInterface.Views;
 @export var user_interface : UserInterface
 
 func _ready() -> void:
-	update_label_text()
 	visible = true;
 	user_interface.navigation_requested.connect(_on_navigation_request)
 
-func _process(delta: float) -> void:
-	update_label_text();
-
 func create_mana() -> void:
-	Main.ref.data.mana += 1;
-	update_label_text();
-	
-func update_label_text() -> void:
-	label.text = "Mana: %s" %Main.ref.data.mana;
+	HandlerMana.ref.create_mana(1);
+
 
 func begin_generating_mana() -> void:
 	timer.start();

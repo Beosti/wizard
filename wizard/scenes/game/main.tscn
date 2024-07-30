@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkyy8nkqummas"]
+[gd_scene load_steps=4 format=3 uid="uid://bkyy8nkqummas"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_w6tyc"]
 [ext_resource type="PackedScene" uid="uid://cm2h62nk22roj" path="res://scenes/userinterface/user_interface.tscn" id="2_eiseq"]
+[ext_resource type="Script" path="res://scripts/handlers/handler_mana.gd" id="3_sgxwr"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_w6tyc")
 
 [node name="UserInterface" parent="." instance=ExtResource("2_eiseq")]
+
+[node name="Handlers" type="Node" parent="."]
+
+[node name="Mana" type="Node" parent="Handlers"]
+script = ExtResource("3_sgxwr")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ku5cpblk3cjd" path="res://scenes/mana_generator.tscn" id="1_5ctoi"]
 [ext_resource type="Script" path="res://scenes/userinterface/user_interface.gd" id="1_al6o8"]
-[ext_resource type="Script" path="res://scripts/userinterface/man_label.gd" id="2_yhads"]
+[ext_resource type="Script" path="res://scripts/userinterface/mana_label.gd" id="2_yhads"]
 [ext_resource type="PackedScene" uid="uid://cxrdvccsnycfy" path="res://scenes/clicker.tscn" id="3_5ueiw"]
 
 [node name="UserInterface" type="Control"]
