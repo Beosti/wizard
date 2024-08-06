@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ku5cpblk3cjd"]
 
-[ext_resource type="Script" path="res://scripts/mana_generator.gd" id="1_2uojm"]
+[ext_resource type="Script" path="res://scripts/userinterface/mana_generator.gd" id="1_2uojm"]
 [ext_resource type="Script" path="res://scripts/userinterface/mana_label.gd" id="2_w7bct"]
 
 [node name="ManaGenerator" type="Control" node_paths=PackedStringArray("button", "timer")]

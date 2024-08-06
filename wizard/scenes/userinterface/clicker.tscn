@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxrdvccsnycfy"]
 
-[ext_resource type="Script" path="res://scripts/clicker.gd" id="1_tfx5e"]
+[ext_resource type="Script" path="res://scripts/userinterface/clicker.gd" id="1_tfx5e"]
 [ext_resource type="Script" path="res://scripts/userinterface/mana_label.gd" id="2_43wd1"]
 
 [node name="Clicker" type="Control"]
