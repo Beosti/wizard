@@ -34,3 +34,9 @@ func consume_mana(quantity : int) -> Error:
 	mana_consumed_event.emit(quantity);
 	
 	return Error.OK;
+
+func trigger_clicker() -> void:
+	var quantity : int = 1;
+	quantity += Main.ref.data.up_clicker_01_level;
+	create_mana(quantity);
+	return;
