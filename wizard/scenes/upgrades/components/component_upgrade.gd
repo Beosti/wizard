@@ -5,7 +5,7 @@ extends Control
 @export var label_description : RichTextLabel;
 @export var button : Button;
 
-var upgrade : Up01ClickerUpgrade;
+var upgrade : Upgrade;
 
 func _ready() -> void:
 	upgrade = Up01ClickerUpgrade.new();

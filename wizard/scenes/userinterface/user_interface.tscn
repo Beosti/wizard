@@ -116,8 +116,8 @@ user_interface = NodePath("../../..")
 
 [node name="Clicker" parent="HBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("3_5ueiw")]
 layout_mode = 1
-view = 1
 user_interface = NodePath("../../..")
+view = 1
 
 [node name="Upgrade" parent="HBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("5_1qbht")]
 layout_mode = 1

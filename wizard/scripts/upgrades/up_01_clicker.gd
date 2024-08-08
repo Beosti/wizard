@@ -1,15 +1,11 @@
 class_name Up01ClickerUpgrade
-extends Node
-
-signal leveled_up_event;
-var level : int;
-var title : String = "Clicker Upgrade";
-var base_cost : int = 5;
-var cost : int;
-
+extends Upgrade
 
 func _init() -> void:
 	level = Main.ref.data.up_clicker_01_level;
+	title = "Clicker upgrade";
+	base_cost = 5;
+	get_cost();
 
 func get_description() -> String:
 	var description : String = "Increases the amount of mana created by the clicker.
@@ -18,11 +14,6 @@ func get_description() -> String:
 
 func get_cost() -> void:
 	cost = int (base_cost * pow(1.5, level));
-
-func get_affordable() -> bool:
-	if (HandlerMana.ref.mana() > cost):
-		return true;
-	return false;
 
 func level_up() -> void:
 	var error : Error = HandlerMana.ref.consume_mana(cost);
