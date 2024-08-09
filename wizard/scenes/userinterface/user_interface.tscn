@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm2h62nk22roj"]
+[gd_scene load_steps=7 format=3 uid="uid://cm2h62nk22roj"]
 
 [ext_resource type="PackedScene" uid="uid://ku5cpblk3cjd" path="res://scenes/userinterface/mana_generator.tscn" id="1_5ctoi"]
 [ext_resource type="Script" path="res://scripts/userinterface/user_interface.gd" id="1_al6o8"]
 [ext_resource type="Script" path="res://scripts/userinterface/mana_label.gd" id="2_yhads"]
 [ext_resource type="PackedScene" uid="uid://cxrdvccsnycfy" path="res://scenes/userinterface/clicker.tscn" id="3_5ueiw"]
+[ext_resource type="Script" path="res://scripts/userinterface/wood_label.gd" id="3_dep8v"]
 [ext_resource type="PackedScene" uid="uid://cblpsvdur8lqd" path="res://scenes/upgrades/upgrade.tscn" id="5_1qbht"]
 
 [node name="UserInterface" type="Control"]
@@ -93,10 +94,15 @@ theme_override_constants/margin_bottom = 16
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPanel/VBoxContainer/Resources/MarginContainer"]
 layout_mode = 2
 
-[node name="ManLabel" type="Label" parent="HBoxContainer/LeftPanel/VBoxContainer/Resources/MarginContainer/VBoxContainer"]
+[node name="ManaLabel" type="Label" parent="HBoxContainer/LeftPanel/VBoxContainer/Resources/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Mana: <value>"
 script = ExtResource("2_yhads")
+
+[node name="WoodLabel" type="Label" parent="HBoxContainer/LeftPanel/VBoxContainer/Resources/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Wood: <value>"
+script = ExtResource("3_dep8v")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
