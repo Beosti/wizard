@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjx5h4784p03l"]
+
+[ext_resource type="Script" path="res://scripts/userinterface/small_mine.gd" id="1_0xgtv"]
+
+[node name="SmallMine" type="Control" node_paths=PackedStringArray("label_title", "label_description", "button", "timer")]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 3
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xgtv")
+label_title = NodePath("MarginContainer/HBoxContainer/UpgradeText/VBoxContainer/Title")
+label_description = NodePath("MarginContainer/HBoxContainer/UpgradeText/VBoxContainer/Description")
+button = NodePath("MarginContainer/HBoxContainer/StartButton")
+timer = NodePath("Timer")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="UpgradeText" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/UpgradeText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/UpgradeText/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Small mine"
+
+[node name="Description" type="RichTextLabel" parent="MarginContainer/HBoxContainer/UpgradeText/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "A small little mine, perfect to cut out some stone to begin"
+fit_content = true
+
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "Start"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

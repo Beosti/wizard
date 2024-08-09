@@ -1,6 +1,6 @@
-class_name UpgradeView
+class_name Mine
 extends View
 
 func _ready() -> void:
-	super()
+	super();
 	visible = false;

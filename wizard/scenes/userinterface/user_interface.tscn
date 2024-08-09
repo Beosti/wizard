@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm2h62nk22roj"]
+[gd_scene load_steps=10 format=3 uid="uid://cm2h62nk22roj"]
 
 [ext_resource type="PackedScene" uid="uid://ku5cpblk3cjd" path="res://scenes/userinterface/mana_generator.tscn" id="1_5ctoi"]
 [ext_resource type="Script" path="res://scripts/userinterface/user_interface.gd" id="1_al6o8"]
 [ext_resource type="Script" path="res://scripts/userinterface/mana_label.gd" id="2_yhads"]
 [ext_resource type="PackedScene" uid="uid://cxrdvccsnycfy" path="res://scenes/userinterface/clicker.tscn" id="3_5ueiw"]
 [ext_resource type="Script" path="res://scripts/userinterface/wood_label.gd" id="3_dep8v"]
+[ext_resource type="Script" path="res://scripts/userinterface/stone_label.gd" id="4_hqyj7"]
 [ext_resource type="PackedScene" uid="uid://cblpsvdur8lqd" path="res://scenes/upgrades/upgrade.tscn" id="5_1qbht"]
+[ext_resource type="PackedScene" uid="uid://d436x1jlsxsm" path="res://scenes/userinterface/forest.tscn" id="7_gbyy3"]
+[ext_resource type="PackedScene" uid="uid://cjea5t4xijnqh" path="res://scenes/userinterface/mine.tscn" id="8_4q701"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -67,6 +70,10 @@ text = "Clicker"
 layout_mode = 2
 text = "Upgrades"
 
+[node name="ForestLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Forest"
+
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
@@ -104,6 +111,11 @@ layout_mode = 2
 text = "Wood: <value>"
 script = ExtResource("3_dep8v")
 
+[node name="StoneLabel" type="Label" parent="HBoxContainer/LeftPanel/VBoxContainer/Resources/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Stone: <value>"
+script = ExtResource("4_hqyj7")
+
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 16
@@ -129,6 +141,17 @@ view = 1
 layout_mode = 1
 user_interface = NodePath("../../..")
 
+[node name="Forest" parent="HBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("7_gbyy3")]
+layout_mode = 1
+user_interface = NodePath("../../..")
+view = 3
+
+[node name="Mine" parent="HBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("8_4q701")]
+layout_mode = 1
+user_interface = NodePath("../../..")
+view = 4
+
 [connection signal="pressed" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/GeneratorLink" to="." method="_on_generator_link_pressed"]
 [connection signal="pressed" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/ClickerLink" to="." method="_on_clicker_link_pressed"]
 [connection signal="pressed" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/UpgradeLink" to="." method="_on_upgrade_link_pressed"]
+[connection signal="pressed" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/ForestLink" to="." method="_on_forest_link_pressed"]
