@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://ku5cpblk3cjd" path="res://scenes/userinterface/mana_generator.tscn" id="1_5ctoi"]
 [ext_resource type="Script" path="res://scripts/userinterface/user_interface.gd" id="1_al6o8"]
-[ext_resource type="Script" path="res://scripts/userinterface/mana_label.gd" id="2_yhads"]
+[ext_resource type="Script" path="res://scripts/userinterface/labels/mana_label.gd" id="2_yhads"]
 [ext_resource type="PackedScene" uid="uid://cxrdvccsnycfy" path="res://scenes/userinterface/clicker.tscn" id="3_5ueiw"]
-[ext_resource type="Script" path="res://scripts/userinterface/wood_label.gd" id="3_dep8v"]
-[ext_resource type="Script" path="res://scripts/userinterface/stone_label.gd" id="4_hqyj7"]
+[ext_resource type="Script" path="res://scripts/userinterface/labels/wood_label.gd" id="3_dep8v"]
+[ext_resource type="Script" path="res://scripts/userinterface/labels/stone_label.gd" id="4_hqyj7"]
 [ext_resource type="PackedScene" uid="uid://cblpsvdur8lqd" path="res://scenes/upgrades/upgrade.tscn" id="5_1qbht"]
-[ext_resource type="PackedScene" uid="uid://d436x1jlsxsm" path="res://scenes/userinterface/forest.tscn" id="7_gbyy3"]
-[ext_resource type="PackedScene" uid="uid://cjea5t4xijnqh" path="res://scenes/userinterface/mine.tscn" id="8_4q701"]
+[ext_resource type="PackedScene" uid="uid://d436x1jlsxsm" path="res://scenes/userinterface/zones/forest/forest.tscn" id="7_gbyy3"]
+[ext_resource type="PackedScene" uid="uid://cjea5t4xijnqh" path="res://scenes/userinterface/zones/mine/mine.tscn" id="8_4q701"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -73,6 +73,10 @@ text = "Upgrades"
 [node name="ForestLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Forest"
+
+[node name="MineLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mine"
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
@@ -155,3 +159,4 @@ view = 4
 [connection signal="pressed" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/ClickerLink" to="." method="_on_clicker_link_pressed"]
 [connection signal="pressed" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/UpgradeLink" to="." method="_on_upgrade_link_pressed"]
 [connection signal="pressed" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/ForestLink" to="." method="_on_forest_link_pressed"]
+[connection signal="pressed" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/MineLink" to="." method="_on_mine_link_pressed"]

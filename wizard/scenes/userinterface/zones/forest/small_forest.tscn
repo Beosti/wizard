@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://oalm6q3dr143"]
 
-[ext_resource type="Script" path="res://scripts/userinterface/small_forest.gd" id="1_l88so"]
+[ext_resource type="Script" path="res://scripts/userinterface/zones/forest/small_forest.gd" id="1_l88so"]
 
 [node name="SmallForest" type="Control"]
 custom_minimum_size = Vector2(0, 160)

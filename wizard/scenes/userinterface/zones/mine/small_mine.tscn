@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjx5h4784p03l"]
 
-[ext_resource type="Script" path="res://scripts/userinterface/small_mine.gd" id="1_0xgtv"]
+[ext_resource type="Script" path="res://scripts/userinterface/zones/mine/small_mine.gd" id="1_0xgtv"]
 
 [node name="SmallMine" type="Control" node_paths=PackedStringArray("label_title", "label_description", "button", "timer")]
 custom_minimum_size = Vector2(0, 160)

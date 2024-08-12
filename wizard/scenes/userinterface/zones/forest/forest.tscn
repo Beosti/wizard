@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d436x1jlsxsm"]
 
-[ext_resource type="Script" path="res://scripts/userinterface/forest.gd" id="1_ob1af"]
-[ext_resource type="PackedScene" uid="uid://oalm6q3dr143" path="res://scenes/userinterface/small_forest.tscn" id="2_mi7m7"]
+[ext_resource type="Script" path="res://scripts/userinterface/zones/forest/forest.gd" id="1_ob1af"]
+[ext_resource type="PackedScene" uid="uid://oalm6q3dr143" path="res://scenes/userinterface/zones/forest/small_forest.tscn" id="2_mi7m7"]
 
 [node name="Forest" type="Control"]
 layout_mode = 3

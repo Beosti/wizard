@@ -24,6 +24,5 @@ func _on_upgrade_link_pressed() -> void:
 func _on_forest_link_pressed() -> void:
 	navigation_requested.emit(Views.FOREST);
 
-
 func _on_mine_link_pressed() -> void:
 	navigation_requested.emit(Views.MINE);

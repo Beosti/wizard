@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjea5t4xijnqh"]
 
-[ext_resource type="Script" path="res://scripts/userinterface/mine.gd" id="1_lix68"]
-[ext_resource type="PackedScene" uid="uid://cjx5h4784p03l" path="res://scenes/userinterface/small_mine.tscn" id="1_rwc44"]
+[ext_resource type="Script" path="res://scripts/userinterface/zones/mine/mine.gd" id="1_lix68"]
+[ext_resource type="PackedScene" uid="uid://cjx5h4784p03l" path="res://scenes/userinterface/zones/mine/small_mine.tscn" id="1_rwc44"]
 
 [node name="Mine" type="Control"]
 layout_mode = 3
